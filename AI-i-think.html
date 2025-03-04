@@ -232,8 +232,8 @@ header { color:#eee; padding:12px; font-size:20px; height:45px; font-family:"Ope
 const chat = (id) => window.document.getElementById(id);
 
 // Set the API endpoint URL
-chat.endPoint  = "https://api.openai.com/v1/chat/completions";
-chat.model = "gpt-3.5-turbo"
+chat.endPoint  = "https://api.groq.com/openai/v1/chat/completions";
+chat.model = "llama-3.3-70b-versatile"
 chat.body  = { model: chat.model, temperature: 0.8 }
 chat.history = []
 
@@ -382,7 +382,7 @@ chat.clipboard = (i) => {
 window.onload = () => {
   chat.apiKey = localStorage.getItem('OPENAI_API_KEY');
   if (!chat.apiKey || chat.apiKey.length < 10 ) {
-     chat.apiKey = prompt("Please input Secret API key (will store in local.storage)", "sk-");
+     chat.apiKey = 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
      localStorage.setItem('OPENAI_API_KEY', chat.apiKey)
   }
   chat.prompts = chat('list').innerHTML
